@@ -13,3 +13,54 @@ html {
   background-size: cover;
   image-rendering: pixelated;
 }
+
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainInnerContainer {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  height: 75%;
+  align-items: center;
+  background-color: white;
+
+}
+
+
+.fetcherImg {
+  width: 150%;
+  height: 150%;
+}
+
+/* Style for the Pokemon name */
+h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.fetcherImgOuter {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.fetcherImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style for the Pokemon information */
+p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}

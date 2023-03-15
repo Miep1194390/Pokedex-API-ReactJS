@@ -8,9 +8,13 @@ function Fetcher() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0");
       const data = await response.json();
-      setPokemonData(data.results);
+      const pokemonData = await Promise.all(data.results.map(async pokemon => {
+        const response = await fetch(pokemon.url);
+        return response.json();
+      }));
+      setPokemonData(pokemonData);
     }
     fetchData();
   }, []);
@@ -19,8 +23,7 @@ function Fetcher() {
     async function fetchImages() {
       const images = {};
       for (const pokemon of pokemonData) {
-        const data = await fetchPokemonData(pokemon.url);
-        images[pokemon.name] = data.sprites.front_default;
+        images[pokemon.name] = pokemon.sprites.front_default;
       }
       setPokemonImages(images);
     }
@@ -36,20 +39,20 @@ function Fetcher() {
     return () => clearInterval(intervalId);
   }, [currentPokemonIndex, pokemonData.length]);
 
-  async function fetchPokemonData(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  }
-
   return (
     <div>
       {pokemonData.length > 0 && (
         <div>
           <h1>{pokemonData[currentPokemonIndex].name}</h1>
-          {pokemonImages[pokemonData[currentPokemonIndex].name] && (
-            <img src={pokemonImages[pokemonData[currentPokemonIndex].name]} alt={pokemonData[currentPokemonIndex].name} />
-          )}
+          <div className="fetcherImgOuter">
+            <img
+              className="fetcherImg"
+              src={pokemonImages[pokemonData[currentPokemonIndex].name]}
+              alt={pokemonData[currentPokemonIndex].name}
+            />
+          </div>
+          <p>Nmmr: {pokemonData[currentPokemonIndex].id}</p>
+          <p>Type: {pokemonData[currentPokemonIndex].types.map(type => type.type.name).join(", ")}</p>
         </div>
       )}
     </div>

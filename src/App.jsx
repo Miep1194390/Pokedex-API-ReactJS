@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header></Header>
       <Main></Main>
-      <Fetcher></Fetcher>
+
     </div>
   );
 };
