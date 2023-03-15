@@ -8,7 +8,7 @@ function Fetcher() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0");
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151&offset=0");
       const data = await response.json();
       const pokemonData = await Promise.all(data.results.map(async pokemon => {
         const response = await fetch(pokemon.url);
@@ -43,7 +43,7 @@ function Fetcher() {
     <div>
       {pokemonData.length > 0 && (
         <div>
-          <h1>{pokemonData[currentPokemonIndex].name}</h1>
+          <div className="pokemonNameOuter"><h1 className="pokemonName">{pokemonData[currentPokemonIndex].name}</h1></div>
           <div className="fetcherImgOuter">
             <img
               className="fetcherImg"
@@ -51,8 +51,12 @@ function Fetcher() {
               alt={pokemonData[currentPokemonIndex].name}
             />
           </div>
-          <p>Nmmr: {pokemonData[currentPokemonIndex].id}</p>
-          <p>Type: {pokemonData[currentPokemonIndex].types.map(type => type.type.name).join(", ")}</p>
+          <div className="pokemonNummerOuter">
+            <p className="pokemonNummer">Nmmr: {pokemonData[currentPokemonIndex].id}</p>
+          </div>
+          <div className="pokemonNummerOuter">
+            <p className="pokemonNummer">Type: {pokemonData[currentPokemonIndex].types.map(type => type.type.name).join(", ")}</p>
+          </div>
         </div>
       )}
     </div>
