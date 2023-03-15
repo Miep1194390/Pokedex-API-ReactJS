@@ -7,3 +7,9 @@
   font-family: "Nexa", sans-serif;
   font-weight: bold;
 }
+
+html {
+  background: url("/src/images/pokemongif.gif") no-repeat center fixed;
+  background-size: cover;
+  image-rendering: pixelated;
+}

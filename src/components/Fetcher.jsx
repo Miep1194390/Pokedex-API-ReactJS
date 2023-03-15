@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import "../App.css";
 
 function Fetcher() {
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonImages, setPokemonImages] = useState({});
+  const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -12,12 +14,6 @@ function Fetcher() {
     }
     fetchData();
   }, []);
-
-  async function fetchPokemonData(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  }
 
   useEffect(() => {
     async function fetchImages() {
@@ -33,18 +29,29 @@ function Fetcher() {
     }
   }, [pokemonData]);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentPokemonIndex((currentPokemonIndex + 1) % pokemonData.length);
+    }, 3000);
+    return () => clearInterval(intervalId);
+  }, [currentPokemonIndex, pokemonData.length]);
+
+  async function fetchPokemonData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
   return (
     <div>
-      <ul>
-        {pokemonData.map((pokemon) => (
-          <li key={pokemon.name}>
-            {pokemon.name}
-            {pokemonImages[pokemon.name] && (
-              <img src={pokemonImages[pokemon.name]} alt={pokemon.name} />
-            )}
-          </li>
-        ))}
-      </ul>
+      {pokemonData.length > 0 && (
+        <div>
+          <h1>{pokemonData[currentPokemonIndex].name}</h1>
+          {pokemonImages[pokemonData[currentPokemonIndex].name] && (
+            <img src={pokemonImages[pokemonData[currentPokemonIndex].name]} alt={pokemonData[currentPokemonIndex].name} />
+          )}
+        </div>
+      )}
     </div>
   );
 }

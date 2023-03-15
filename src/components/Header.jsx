@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
+import pokemonblue from '../images/pokemonblue.png'
 
 const Header = () => {
-    return (
-        <div className=""></div>
-    )
 };
 
 export default Header;
