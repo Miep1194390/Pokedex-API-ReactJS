@@ -33,10 +33,10 @@ function Fetcher() {
   }, [pokemonData]);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const intervalletje = setInterval(() => {
       setCurrentPokemonIndex((currentPokemonIndex + 1) % pokemonData.length);
     }, 3000);
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalletje);
   }, [currentPokemonIndex, pokemonData.length]);
 
   return (
