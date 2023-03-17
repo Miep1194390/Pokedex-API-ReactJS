@@ -20,17 +20,29 @@ html {
   background: url("/src/images/pokemongif.gif") no-repeat center fixed;
   background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   image-rendering: pixelated;
-}
 
+}
+body{
+  overflow-x: hidden!important;
+}
 .mainContainer {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: auto;
 }
 
 .mainOuterContainer {
-  width: 100%;
+  width: 100vw;
+  height: 40vh  ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainOuterContainer2 {
+  width: 100vw;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +55,7 @@ html {
   border-style: solid;
   padding: 1em;
   margin: 1em 0 0 0;
-  width: 50%;
+  width: 75%;
   max-width: 100%;
   background-color: #ffffff;
 }
@@ -89,4 +101,35 @@ html {
 
 .pokemonNummer {
   font-family: 'pokemon-gb-regular', sans-serif;
+}
+.pokemonList{
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  border-image: url(./images/frame-hd.png) 42 round;
+  border-width: 21px;
+  border-style: solid;
+  padding: 1em;
+  margin: 1em 0 0 0;
+  background-color: #ffffff;
+}
+
+.pokemonListOuter {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.pokemonImg {
+  width: 15vw;
+}
+
+.pokemonNameList {
+  font-size: 1.5vw;
+  font-family: 'pokemon-gb-regular', sans-serif;
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 
-function Fetcher() {
+const Fetcher = () => {
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonImages, setPokemonImages] = useState({});
   const [currentPokemonIndex, setCurrentPokemonIndex] = useState(0);
