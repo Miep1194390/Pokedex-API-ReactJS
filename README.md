@@ -5,7 +5,7 @@ Authors: Miep1194390
 Languages:
 
 HTML/CSS (Nes Style CSS Framework https://nostalgic-css.github.io/NES.css/)
-JavaScript (ReactJS)
+<li>JavaScript (ReactJS) </li>
 
 Uitwerking:
 
