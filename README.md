@@ -10,5 +10,9 @@ Languages:
 
 Uitwerking:
 
-https://user-images.githubusercontent.com/91285462/226077101-8ff13c5a-f3a1-4503-b834-6b4873ec5837.mp4
+
+
+https://user-images.githubusercontent.com/91285462/226077260-3be5159d-9ba8-4b30-aa2b-4c58d4bc22d3.mp4
+
+
 
