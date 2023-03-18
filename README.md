@@ -4,7 +4,7 @@ Authors: Miep1194390
 
 Languages:
 
-HTML/CSS (Nes Style CSS Framework https://nostalgic-css.github.io/NES.css/)
+<li>HTML/CSS (Nes Style CSS Framework https://nostalgic-css.github.io/NES.css/) </li>
 <li>JavaScript (ReactJS) </li>
 
 Uitwerking:
