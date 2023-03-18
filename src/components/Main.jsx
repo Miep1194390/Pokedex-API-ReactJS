@@ -7,14 +7,18 @@ import PokemonList from "./PokemonList";
 const Main = () => {
   return (
     <div className="mainContainer">
-      <Searchbar></Searchbar>
+      <div className="Spacer"></div>
+      <div className="Spacer"></div>
       <div className="mainOuterContainer">
         <div className="mainInnerContainer">
           <Fetcher></Fetcher>
         </div>
       </div>
       <div>
-        <PokemonList></PokemonList>
+        <div className="Spacer"></div>
+        <div className="Spacer"></div>
+        <Searchbar></Searchbar>
+        <div className="Spacer"></div>
       </div>
     </div>
   );

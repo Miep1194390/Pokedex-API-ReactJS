@@ -1,3 +1,5 @@
+@import "../node_modules/nes.css/css/nes.css";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
   box-sizing: border-box;
@@ -5,15 +7,8 @@
   padding: 0;
   scroll-behavior: smooth;
   text-decoration: none;
-  font-family: 'pokemon-gb-regular', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   font-weight: bold;
-}
-
-@font-face {
-  font-family: "pokemon-gb-regular";
-  src: url(./assets/fonts/Pokemon_GB.ttf);
-  font-weight: normal;
-  font-style: normal;
 }
 
 html {
@@ -22,19 +17,36 @@ html {
   width: 100vw;
   height: auto;
   image-rendering: pixelated;
+  font-family: 'Press Start 2P', cursive;
+}
 
+body,
+pre,
+code,
+kbd,
+samp,
+.font,
+.nes-buton,
+.name_field,
+.nes-field>label p {
+  font-family: 'Press Start 2P', cursive;
 }
-body{
-  overflow-x: hidden!important;
+
+body {
+  overflow-x: hidden !important;
 }
+
 .mainContainer {
   width: 100vw;
   height: auto;
+  background: url("/src/images/pokemongif.gif") no-repeat center fixed;
+  background-size: cover;
+  image-rendering: pixelated;
 }
 
 .mainOuterContainer {
   width: 100vw;
-  height: 40vh  ;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,8 +66,7 @@ body{
   border-width: 21px;
   border-style: solid;
   padding: 1em;
-  margin: 1em 0 0 0;
-  width: 75%;
+  width: 50vw;
   max-width: 100%;
   background-color: #ffffff;
 }
@@ -63,11 +74,13 @@ body{
 .mainInner2Container {
   display: flex;
   justify-content: center;
+  padding: 5vh;
 }
+
 
 .pokemonName {
   font-size: 3vw;
-  font-family: 'pokemon-gb-regular', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .pokemonNameOuter {
@@ -100,9 +113,10 @@ body{
 }
 
 .pokemonNummer {
-  font-family: 'pokemon-gb-regular', sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
-.pokemonList{
+
+.pokemonList {
   width: 75%;
   display: flex;
   justify-content: space-around;
@@ -118,10 +132,8 @@ body{
 }
 
 .pokemonListOuter {
-  display: flex;
+  display: grid;
   justify-content: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
 }
 
 .pokemonImg {
@@ -130,6 +142,80 @@ body{
 
 .pokemonNameList {
   font-size: 1.5vw;
-  font-family: 'pokemon-gb-regular', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
+}
+
+.Spacer {
+  width: 100vw;
+  height: 10vh;
+}
+
+.buttonOuter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1vh;
+}
+
+.searchbarResultaat {
+  display: flex;
+  justify-content: left;
+  position: relative;
+  border-image: url(./images/frame-hd.png) 42 round;
+  border-width: 21px;
+  border-style: solid;
+  padding: 1em;
+  width: 50vw;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding-top: 2vh;
+}
+
+.searchbarResultaatFoto {
+  width: 200%;
+  height: 100%;
+}
+
+.searchbarResultaatLeft {}
+
+.searchbarResultaatRight {}
+
+.font {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange;
+  }
 }
