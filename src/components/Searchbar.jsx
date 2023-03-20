@@ -40,7 +40,9 @@ const Searchbar = () => {
         <div>
           <div className='searchbarResultaat'>
             <div className="searchbarResultaatLeft">
-              <h1 className='font'>{pokemons.name}</h1>
+              <h1 className='font'>{pokemons.name} </h1>
+              <br />
+              <h1 className='font'>Nummer: {pokemons.id}</h1>
               <br />
               <h1 className='font'>Lengte: {pokemons.height}</h1>
               <br />

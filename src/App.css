@@ -66,7 +66,7 @@ body {
   border-width: 21px;
   border-style: solid;
   padding: 1em;
-  width: 50vw;
+  width: 35vw;
   max-width: 100%;
   background-color: #ffffff;
 }
@@ -181,6 +181,11 @@ body {
 
 .searchbarResultaatRight {}
 
+.fontfooter {
+  color: #333;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .font {
   overflow: hidden;
   /* Ensures the content is not revealed until the animation */
@@ -218,4 +223,10 @@ body {
   50% {
     border-color: orange;
   }
+}
+
+.headerOuter {
+  display: flex;
+  justify-content: space-evenly;
+  letter-spacing: 1px;
 }
