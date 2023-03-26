@@ -8,14 +8,13 @@ import PokemonRandom from "./PokemonRandom";
 const Main = () => {
   return (
     <div className="mainContainer">
-      <div className="Spacer">
-        <header className="headerOuter">
-          <span className="fontfooter">@Miep1194390 - &copy;2023</span>
-        </header>
-      </div>
+      <header className="headerOuter">
+        <span className="fontfooter">@Miep1194390 - &copy;2023</span>
+      </header>
       <div className="Spacer"></div>
       <div className="Spacer"></div>
-          <Fetcher></Fetcher>
+      <div className="Spacer"></div>
+      <Fetcher></Fetcher>
       <div>
         <div className="Spacer"></div>
         <div className="Spacer"></div>
