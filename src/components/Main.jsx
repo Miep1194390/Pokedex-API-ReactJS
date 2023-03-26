@@ -3,6 +3,7 @@ import "../App.css";
 import Fetcher from "./Fetcher";
 import Searchbar from "./Searchbar";
 import PokemonList from "./PokemonList";
+import PokemonRandom from "./PokemonRandom";
 
 const Main = () => {
   return (
@@ -14,17 +15,13 @@ const Main = () => {
       </div>
       <div className="Spacer"></div>
       <div className="Spacer"></div>
-      <div className="mainOuterContainer">
-        <div className="mainInnerContainer">
           <Fetcher></Fetcher>
-        </div>
-      </div>
       <div>
         <div className="Spacer"></div>
         <div className="Spacer"></div>
         <Searchbar></Searchbar>
-        <div className="Spacer"></div>
       </div>
+      <PokemonRandom></PokemonRandom>
     </div>
   );
 };

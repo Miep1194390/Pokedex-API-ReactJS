@@ -41,6 +41,8 @@ const Fetcher = () => {
 
   return (
     <div>
+      <div className="mainOuterContainer">
+      <div className="mainInnerContainer">
       {pokemonData.length > 0 && (
         <div>
           <div className="pokemonNameOuter"><h1 className="pokemonName">{pokemonData[currentPokemonIndex].name}</h1></div>
@@ -59,6 +61,8 @@ const Fetcher = () => {
           </div>
         </div>
       )}
+      </div>
+      </div>
     </div>
   );
 }
