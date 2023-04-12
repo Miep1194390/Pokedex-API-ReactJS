@@ -153,6 +153,13 @@ body {
   text-align: center;
 }
 
+.repoNameList {
+  font-size: 1vw;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+
 .Spacer {
   width: 100vw;
   height: 10vh;
