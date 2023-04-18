@@ -24,7 +24,7 @@ function GithubProfile() {
   }, []);
 
   if (!userData) {
-    return <div>Loading...</div>;
+    return <div className='font-p2'>Aan het laden...</div>;
   }
 
   return (
